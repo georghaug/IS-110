@@ -1,0 +1,70 @@
+/**
+ * Her har vi en brusmaskin, du putter i penger og når du har nok så printer den en cola
+ *
+ * @Georg
+ * @21.01.2022
+ */
+public class colamaskin
+{
+    //Pris for cola
+    private int price;
+    //Pengene du har i maskinen
+    private int balance; 
+
+    /**
+     * Constructor for colamaskin, dette gjør så prisen blir riktig i alle variabler.
+     */
+    public colamaskin(int cost)
+    {
+        //Her er constructoren, denne viser prisen og saldoen. Her blir variablene definert
+        price = 0;
+        balance = 0;
+    }
+
+    /**
+     *Her har vi en metode for å få prisen til brusen, du velger selv. 
+     *Dette er en getter, for den henter en return value som da er prisen. 
+      */
+    public int getPrice()
+    {
+        //Retunerer prisen
+        return price;
+    }
+    
+    /**
+     * Her kan man hente saldoen sin når man bruker getBalance
+     * Dette er en getter, for den henter en return value som da er saldoen
+     */
+    public int getBalance()
+    {
+        //Returnerer saldoen
+        return balance;
+    }
+    
+    /**
+     *Her kan du putte inn penger
+     *Dette er en setter for den er void, den har ikke returnvalue så den bare setter en variabel
+     *verdi
+     */
+    public void insertMoney(int amount)
+    {
+       //Her tar du saldoen og plusser på antallet du legger inn.
+       balance = balance + amount; 
+    }
+    
+    /** Her "printer" du ut en cola, hvis saldoen din er mindre enn prisen får du ikke tatt ut
+     * en cola. Prisen blir også slettet etter du har tatt ut cola.
+     * Dette er en setter
+     */
+    public void printCola()
+    {
+        //Printingen av en cola
+        if (balance > price)
+        System.out.println("Cola");
+        else System.out.println("Du har ikke nok penger");
+        
+        //Sletter saldoen
+        balance = 0;
+        
+    }
+}
